@@ -45,6 +45,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>eu.hansolo</groupId>
+			<artifactId>Medusa</artifactId>
+			<version>7.9</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
