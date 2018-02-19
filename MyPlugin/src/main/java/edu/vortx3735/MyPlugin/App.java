@@ -15,6 +15,7 @@ public class App extends Plugin {
 	public List<ComponentType> getComponents() {
 
 		return ImmutableList.of(WidgetType.forAnnotatedWidget(MyWidget.class),
-				WidgetType.forAnnotatedWidget(MyDataBoundWidget.class));
+				WidgetType.forAnnotatedWidget(MyDataBoundWidget.class),
+				WidgetType.forAnnotatedWidget(MyMapBoundWidget.class));
 	}
 }
