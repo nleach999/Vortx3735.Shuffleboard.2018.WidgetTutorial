@@ -44,7 +44,10 @@ public class MyMapBoundWidget extends SimpleAnnotatedWidget<MapData> implements 
 	
 	public MyMapBoundWidget ()
 	{
+		// Export the properties to set the key value to bind to each gauge.
 		exportProperties(_topKey, _middleKey, _bottomKey);
+		
+		// Set up a listener that gets triggered every time the map is updated.
 		dataProperty().addListener(this);
 	}
 
@@ -89,6 +92,11 @@ public class MyMapBoundWidget extends SimpleAnnotatedWidget<MapData> implements 
 	}
 
 	
+	/**
+	 * 
+	 * @param g The gauge control to set the value in.
+	 * @param key The key value from the map to find the data to set in the gauge.
+	 */
 	private void setValue (Gauge g, String key)
 	{
 		if (key != null && !key.isEmpty() && dataProperty().get().get(key) != null)
@@ -97,6 +105,9 @@ public class MyMapBoundWidget extends SimpleAnnotatedWidget<MapData> implements 
 	
 	@Override
 	public void changed(ObservableValue<? extends MapData> arg0, MapData arg1, MapData arg2) {
+		
+		// Invoked when the map changes.  It gets the value from the map by the key value,
+		// then updates the appropriate gauge.
 		
 		setValue (_topGauge, _topKey.getValue());
 		setValue (_middleGauge, _middleKey.getValue());
