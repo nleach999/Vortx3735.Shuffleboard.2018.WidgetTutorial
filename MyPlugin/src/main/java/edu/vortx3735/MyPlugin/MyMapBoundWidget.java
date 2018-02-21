@@ -93,6 +93,8 @@ public class MyMapBoundWidget extends SimpleAnnotatedWidget<MapData> implements 
 
 	
 	/**
+	 * Sets the value of the specified gauge control with some validation to make sure the gauge control
+	 * is assigned to a value in the map.
 	 * 
 	 * @param g The gauge control to set the value in.
 	 * @param key The key value from the map to find the data to set in the gauge.
